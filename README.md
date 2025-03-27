@@ -11,7 +11,7 @@ This project will collect the housing market data for metropolitan areas, cities
 # Technologies to be Used:
 ---
 - GCP VM Instance (Processing)
-- Terraform (Infrascructure as a Service)
+- Terraform (Infrastructure as a Service)
 - Airflow (Data Pipeline - ETL)
 - GCP Storage Bucket (Data Lake)
 - Big Query (Data Warehouse)
