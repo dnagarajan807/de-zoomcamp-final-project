@@ -5,7 +5,7 @@ Final Project for de-zoomcamp 2025
 
 # Project Summary:
 ---
-This project will collect the housing market data for metropolitan areas, cities, neighborhoods and zip codes across the US from 2012 to till date, released by redfin. This weekly data will be updated every Wednesday with new data for the prior week. Using this data a investor can analyze what county, cities, or metros that has a good investment potential and identify what times in the year are good to buy or sell.
+This project will collect the housing market data for metropolitan areas, cities, neighborhoods and zip codes across the US from 2012 to till date, released by redfin. This weekly data will be updated every Wednesday with new data for the prior week. Using this data any investor can analyze what county, cities, or metros that has a good investment potential and identify what times in the year are good to buy or sell.
 
 
 # Technologies to be Used:
