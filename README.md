@@ -1,4 +1,4 @@
-# Project:
+# Project: Redfin Housing Data Analysis
 ---
 Final Project for de-zoomcamp 2025 
 
