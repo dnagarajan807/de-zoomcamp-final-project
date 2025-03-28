@@ -35,7 +35,7 @@ County data:- https://redfin-public-data.s3.us-west-2.amazonaws.com/redfin_marke
 City:- https://redfin-public-data.s3.us-west-2.amazonaws.com/redfin_market_tracker/city_market_tracker.tsv000.gz<br>
 
 Below is a sample of the data to be used:
-![Screenshot](/images/DataSample-FinalProject.png)
+![Screenshot](/images/sample_data.png)
 
 period_begin	- Data collection being period	<br>
 period_end	- Data collection end period	<br>
@@ -73,9 +73,9 @@ off_market_in_two_weeks_yoy	- off maket in two weeks (ratio) year over year	<br>
 
 
 
-# Data Pipeline Diagram:
+# Architecture Diagram:
 ---
-![Screenshot](/images/ProjectDataDiagram.jpeg)
+![Screenshot](/images/Architecture.png)
 
 
 # Steps to reproduce :
@@ -131,7 +131,9 @@ terraform apply
 cd ..
 ```
 * This will create the necessary gcs and bigquery instances.
-  
+![Screenshot](/images/gcs-screenshot.png)
+![Screenshot](/images/bigquery-tables.png)
+
 ### Data Transformation
 * Go to https://github.com/MichaelShoemaker/dbt-de-zoomcamp and fork the repository.
 * Create your project in cloud.getdbt.com, connect to your repository and to your bigquery connection.
@@ -141,14 +143,15 @@ dbt deps
 dbt run
 ```
 * The transformed data and models will be saved as a Bigquery tables.
-![Screenshot](/images/ProjectDataDiagram.jpeg)
+![Screenshot](/images/dbt-analytics-models.png)
+![Screenshot](/images/dbt-run.png)
 
 # Data Visualizations
 ---
 Data Visualizations for this project ccan be found here. https://lookerstudio.google.com/reporting/d2e46e03-9954-4671-9f0c-1a9783ef569c/page/p_3akvw4lzqd
 
-![Screenshot](/images/ProjectDataDiagram.jpeg)
+![Screenshot](/images/dashboard1.png)
 
-![Screenshot](/images/ProjectDataDiagram.jpeg)
+![Screenshot](/images/dashboard2.png)
 
 # de-zoomcamp-final-project
