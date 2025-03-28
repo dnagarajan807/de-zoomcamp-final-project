@@ -8,7 +8,7 @@ Final Project for de-zoomcamp 2025
 This project will collect the housing market data for metropolitan areas, cities, neighborhoods and zip codes across the US from 2012 to till date, released by redfin. This weekly data will be updated every Wednesday with new data for the prior week. Using this data any investor can analyze what county, cities, or metros that has a good investment potential and identify what times in the year are good to buy or sell.
 
 
-# Technologies to be Used:
+# Technologies Used:
 ---
 - GCP VM Instance (Processing)
 - Terraform (Infrastructure as a Service)
@@ -20,19 +20,19 @@ This project will collect the housing market data for metropolitan areas, cities
 
 # Problem Description:
 ---
-The data for housing analysis is freely available from redfin, it is divided by region types and is in tsv format. 
-- By combining all this data from 2012 for all region types there may be trends that can be identified which may otherwise be missed looking at a smaller subset of the data. 
-- Creating a resilient data pipeline to facilitate the importing, aggregation of the data and presenting in dashboard will help investors analyse sold to list ratio and potential areas for investment opportunities.
+The data for housing analysis is available for free from redfin, it is divided by region types and is in tsv format. 
+- By automating and combining all this data from 2012 for all region types there may be trends that can be identified which may otherwise be missed looking at a smaller subset of the data. 
+- Creating a resilient data pipeline to facilitate the importing, aggregation of the data and presenting in dashboard will help investors analyse median sales prices, median list prices, sold to list ratio, inventory and sold properties to identify potential areas for investment opportunities.
 
 # Data:
 ---
 The data to be used for this project can be found below :
 
-National data:- "https://redfin-public-data.s3.us-west-2.amazonaws.com/redfin_market_tracker/us_national_market_tracker.tsv000.gz"<br>
-Metro data:- "https://redfin-public-data.s3.us-west-2.amazonaws.com/redfin_market_tracker/redfin_metro_market_tracker.tsv000.gz"<br>
-State data:- "https://redfin-public-data.s3.us-west-2.amazonaws.com/redfin_market_tracker/state_market_tracker.tsv000.gz"<br>
-County data:- "https://redfin-public-data.s3.us-west-2.amazonaws.com/redfin_market_tracker/county_market_tracker.tsv000.gz"<br>
-City:- "https://redfin-public-data.s3.us-west-2.amazonaws.com/redfin_market_tracker/city_market_tracker.tsv000.gz"<br>
+#### National data:- "https://redfin-public-data.s3.us-west-2.amazonaws.com/redfin_market_tracker/us_national_market_tracker.tsv000.gz"<br>
+#### Metro data:- "https://redfin-public-data.s3.us-west-2.amazonaws.com/redfin_market_tracker/redfin_metro_market_tracker.tsv000.gz"<br>
+#### State data:- "https://redfin-public-data.s3.us-west-2.amazonaws.com/redfin_market_tracker/state_market_tracker.tsv000.gz"<br>
+#### County data:- "https://redfin-public-data.s3.us-west-2.amazonaws.com/redfin_market_tracker/county_market_tracker.tsv000.gz"<br>
+#### City:- "https://redfin-public-data.s3.us-west-2.amazonaws.com/redfin_market_tracker/city_market_tracker.tsv000.gz"<br>
 
 Below is a sample of the data to be used:
 ![Screenshot](/images/sample_data.png)
@@ -84,7 +84,7 @@ off_market_in_two_weeks_yoy	- off maket in two weeks (ratio) year over year	<br>
 * Install the below tools:
   * [Terraform](https://www.terraform.io/downloads)
   * [Google Cloud SDK](https://cloud.google.com/sdk/docs/install-sdk#deb)
-  * docker + docker-compose v2
+  * docker + docker-compose
 
 ### Cloud setup
 * In GCP, create a service principal with the following permissions:
@@ -94,14 +94,6 @@ off_market_in_two_weeks_yoy	- off maket in two weeks (ratio) year over year	<br>
   * Dataproc Admin
 * Download the service principal authentication file and save it as `$HOME/.google/credentials/google_credentials_project.json`.
 
-* Ensure that the following APIs are enabled:
-  * Compute Engine API
-  * Cloud Dataproc API
-  * Cloud Dataproc Control API
-  * BigQuery API
-  * Bigquery Storage API
-  * Identity and Access Management (IAM) API
-  * IAM Service Account Credentials API
 
 ### Data Ingestion
 
@@ -109,8 +101,8 @@ off_market_in_two_weeks_yoy	- off maket in two weeks (ratio) year over year	<br>
 * Create a google VM, and set up the private and public keys to remotely connect to the instance.
 * After cloning the repo from "https://github.com/dnagarajan807/de-zoomcamp-final-project.git", sftp the top level folder and its contents into the instance.
 * Go to de-zoomcamp-final-project and update the values shown below in the docker-compose file to match your environment
+  
 ```shell
-
 docker-compose build
 docker-compose up airflow-init
 docker-compose up -d
@@ -132,18 +124,23 @@ cd ..
 ```
 * This will create the necessary gcs and bigquery instances.
 ![Screenshot](/images/gcs-screenshot.png)
+
 ![Screenshot](/images/bigquery-tables.png)
 
 ### Data Transformation
 * Go to (https://github.com/dnagarajan807/final_project_dbt.git) and fork the repository.
 * Create your project in cloud.getdbt.com, connect to your repository and to your bigquery connection.
 * Run the below code
+  
 ```shell
 dbt deps
 dbt run
 ```
+
 * The transformed data and models will be saved as a Bigquery tables.
+  
 ![Screenshot](/images/dbt-analytics-models.png)
+
 ![Screenshot](/images/dbt-run.png)
 
 # Data Visualizations
