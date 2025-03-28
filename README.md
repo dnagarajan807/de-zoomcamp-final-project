@@ -28,11 +28,11 @@ The data for housing analysis is freely available from redfin, it is divided by 
 ---
 The data to be used for this project can be found below :
 
-National data:- https://redfin-public-data.s3.us-west-2.amazonaws.com/redfin_market_tracker/us_national_market_tracker.tsv000.gz<br>
-Metro data:- https://redfin-public-data.s3.us-west-2.amazonaws.com/redfin_market_tracker/redfin_metro_market_tracker.tsv000.gz<br>
-State data:- https://redfin-public-data.s3.us-west-2.amazonaws.com/redfin_market_tracker/state_market_tracker.tsv000.gz<br>
-County data:- https://redfin-public-data.s3.us-west-2.amazonaws.com/redfin_market_tracker/county_market_tracker.tsv000.gz<br>
-City:- https://redfin-public-data.s3.us-west-2.amazonaws.com/redfin_market_tracker/city_market_tracker.tsv000.gz<br>
+National data:- "https://redfin-public-data.s3.us-west-2.amazonaws.com/redfin_market_tracker/us_national_market_tracker.tsv000.gz"<br>
+Metro data:- "https://redfin-public-data.s3.us-west-2.amazonaws.com/redfin_market_tracker/redfin_metro_market_tracker.tsv000.gz"<br>
+State data:- "https://redfin-public-data.s3.us-west-2.amazonaws.com/redfin_market_tracker/state_market_tracker.tsv000.gz"<br>
+County data:- "https://redfin-public-data.s3.us-west-2.amazonaws.com/redfin_market_tracker/county_market_tracker.tsv000.gz"<br>
+City:- "https://redfin-public-data.s3.us-west-2.amazonaws.com/redfin_market_tracker/city_market_tracker.tsv000.gz"<br>
 
 Below is a sample of the data to be used:
 ![Screenshot](/images/sample_data.png)
@@ -107,7 +107,7 @@ off_market_in_two_weeks_yoy	- off maket in two weeks (ratio) year over year	<br>
 
 * Setup airflow to perform data ingestion
 * Create a google VM, and set up the private and public keys to remotely connect to the instance.
-* After cloning the repo " ", sftp the top level folder and its contents into the instance.
+* After cloning the repo from "https://github.com/dnagarajan807/de-zoomcamp-final-project.git", sftp the top level folder and its contents into the instance.
 * Go to de-zoomcamp-final-project and update the values shown below in the docker-compose file to match your environment
 ```shell
 
@@ -135,7 +135,7 @@ cd ..
 ![Screenshot](/images/bigquery-tables.png)
 
 ### Data Transformation
-* Go to https://github.com/MichaelShoemaker/dbt-de-zoomcamp and fork the repository.
+* Go to (https://github.com/dnagarajan807/final_project_dbt.git) and fork the repository.
 * Create your project in cloud.getdbt.com, connect to your repository and to your bigquery connection.
 * Run the below code
 ```shell
@@ -154,4 +154,4 @@ Data Visualizations for this project ccan be found here. https://lookerstudio.go
 
 ![Screenshot](/images/dashboard2.png)
 
-# de-zoomcamp-final-project
+
